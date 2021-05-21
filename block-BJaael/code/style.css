@@ -33,3 +33,20 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+h1{
+  text-align: center;
+  padding: 2rem 0;
+}
+.parent{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 4rem; 
+  /* border: 1px solid black; */
+}
+.child{
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid black;
+  text-align: center;
+}
