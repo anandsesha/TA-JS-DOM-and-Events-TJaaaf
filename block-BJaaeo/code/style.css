@@ -49,39 +49,123 @@ table {
 
 /* Custom Styles */
 
-h1{
-    text-align: center;
-    font-size: 3rem;
-    padding: 2rem 0;
+*,*::before,*::after {
+    box-sizing: border-box;
 }
-.container{
+
+:root {
+    --primary: #e1e4eb;
+    --secondary: rgb(115,30,51);
+    --tertiary: rgb(32,128,129);
+    --white: #fff;
+    --buttons: #cfcfcf;
+    --black: #272727;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-weight: 700;
+   
+}
+
+.container {
+    max-width: 600px;
     margin: 0 auto;
-    max-width: 900px;
-    padding: 2rem;
+    min-height: 60vh;
     border: 1px solid black;
-    border-radius: 10px;
+    background-color: var(--primary);
+    border-radius: 16px;
 }
-.result-Box{
+.margin{
+    margin: 0 2rem;
+}
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+}
+.result {
+    background-color: #000;
+    height: 5rem;
+    border-radius: 10px;
     margin: 2rem;
-    height: 3rem;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-.flex{
+    color: var(--white);
+    font-size: 2rem;
     display: flex;
-    margin: 2rem;
-    height: 34rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
 }
-.flex-80{
+.box{
+    height: 3.4rem;
+    border-radius: 0.6rem;
+    background-color: var(--secondary);
+    margin-bottom: 2rem;
+    background-color: var(--buttons);
+    color: var(--black);
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+.operations{
+    background-color: var(--secondary);
+    color: var(--white);
+}
+.equals{
+    background-color: var(--tertiary);
+}
+.box:hover {
+    border: 1px solid black;
+    font-size: 3rem;
+}
+.operations:hover{
+    border: 1px solid black;
+}
+
+/* Flex */
+
+.flex {
+    display: flex;
+}
+.jcb {
+    justify-content: space-between;
+}
+.jcc {
+    justify-content: center;
+}
+.jce {
+    justify-content: flex-end;
+}
+.aic {
+    align-items: center;
+}
+.ais {
+    align-items: stretch;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-80 {
     flex: 0 1 80%;
-    border: 1px solid black;
-    border-radius: 10px;
 }
-.flex-20{
+.flex-20 {
     flex: 0 1 20%;
-    border: 1px solid black;
-    border-radius: 10px;
 }
-.flex1{
-    display: flex;    
+.flex-16 {
+    flex: 0 1 14%;
+}
+.flex-75 {
+    flex: 0 1 69%;
+}
+.flex-25 {
+    flex: 0 1 23%;
+}
+.flex-30 {
+    flex: 0 1 27%;
 }
