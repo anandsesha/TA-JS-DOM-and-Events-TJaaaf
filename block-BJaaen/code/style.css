@@ -1,0 +1,116 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom Styles */
+
+body{
+    background-color: rgb(245,245,245);
+    height: 100vh;
+    font-family: sans-serif;
+}
+.container{
+    width: 30rem;
+    height: 40rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 4px 4px #5a5858;
+}
+.flex{
+    display: flex;
+}
+.jcc{
+    justify-content: center;
+}
+.jsb{
+    justify-content: space-between;
+}
+.jse{
+    justify-content: space-evenly;
+}
+.aic{
+    align-items: center;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(33,143,252);
+    text-align: center;
+    padding: 1.4rem 0;
+}
+span{
+    display: inline-block;
+    margin-top: 1.4rem;
+    background-color: rgb(245, 144, 108);
+    font-size: 1rem;
+    padding: 0.4rem;
+    font-weight: 600;
+}
+li i {
+    font-size: 4rem;
+    padding: 3rem 0;
+}
+.result{
+    text-align: center;
+    padding: 1.2rem 0;
+    color: rgb(33,143,252);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.user-icons,.computer-icons{
+    margin-top: 0.6rem;
+}
+.selected{
+    border:1px solid rgb(250, 74, 10);
+}
+button{
+    background-color: black;
+    color: #fff;
+    padding: 0.21rem;
+}
