@@ -74,6 +74,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  box-shadow: 0px 1px 4px black;
 }
 
 p {
@@ -90,4 +92,28 @@ input[type='text'] {
 }
 .terms {
   display: inline-block;
+}
+.modal_overlay{
+  background-color: aqua;
+}
+.display{
+  display: none;
+}
+.open{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+}
+.modal_close{
+  width: max-content;
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.6rem;
 }
