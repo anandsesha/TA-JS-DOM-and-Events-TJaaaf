@@ -80,3 +80,14 @@ label{
 button{
   margin: 2rem 0;
 }
+.error{
+  border: 1px solid red;
+}
+.success{
+  border: 1px solid green;
+}
+small{
+  font-size: 1rem;
+  padding-top: 0.4rem;
+  font-weight: 600;
+}
