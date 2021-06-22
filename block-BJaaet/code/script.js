@@ -1,46 +1,96 @@
+let input = document.querySelector(`input[type = "text"]`)
+let ul = document.querySelector('.movies_list')
+
+let allMovies = [
+  {
+    name: "Forest Gump",
+    watched: false,
+  },
+  {
+    name: "Inception",
+    watched: true,
+  }
+]
+
+input.addEventListener('keyup',(event) =>{
+  event.preventDefault();
+
+  console.log(event.target.value)
+  //Step 1: adding a movie
+  if(event.keyCode === 13){ //enter keycode 13
+    console.log(event.target.value)
+    
+    allMovies.push({
+      name: event.target.value,
+      watched: false,
+    });
+    event.target.value = ""
+
+    createMovieUI();
+
+  }
+});
+
+//Step 2: Create below Layout in createMovieUI
+
 {/* <li class="movie">
-              <input type="checkbox" class="checkbox"><span>The Godfather</span>
+              <input type="checkbox" class="checkbox" id="1">
+              <label for="1">The Godfather</label>
               <button>❌</button>
             </li>
 <hr> */}
 
-let form = document.querySelector('form')
-let ul = document.createElement('ul')
-ul.classList.add('movies_list')
+function createMovieUI(){
 
+  ul.innerHTML = "";
 
-form.addEventListener('submit',handleSubmit)
+  allMovies.forEach((movie, id) => {
 
-let movieInfo = {}
-
-function handleSubmit(event){
-    event.preventDefault();
-    // console.dir(form.elements.search_box.value)
-    let movie_name = event.target.elements.search_box.value;
     let li = document.createElement('li')
     let input = document.createElement('input')
-    input.type = 'checkbox'
     input.classList.add('checkbox')
-    input.id = 'inputs'
-    let span = document.createElement('span')
-    span.innerText = movie_name;
-    movieInfo.name = movie_name;
-    // console.log(movieInfo.name)
-    // console.log(movie_name)
+    input.type = 'checkbox'
+    input.id = id;
+    input.checked = movie.watched;
+
+    input.addEventListener('change',handleChecked)
+
+
+    let label = document.createElement('label')
+    label.for = id;
+    label.innerText = movie.name;
+
     let button = document.createElement('button')
     button.innerText = '❌'
+    button.setAttribute("data-id",id)
+
     button.addEventListener('click',handleClick)
 
-    li.append(input,span,button)
     let hr = document.createElement('hr')
+
+    li.append(input,label,button)
     ul.append(li,hr)
-    form.append(ul)
+  })
 }
 
-// let button = document.querySelector('button')
+createMovieUI();
 
 function handleClick(event){
-  document.getElementById('inputs').value = ''
-  // document.getElementsByClassName('checkbox').innerText = ""
+  console.log(event.target)
+  // event.target.parentElement.remove(); To remove the movie OR:
+  
+  let id = event.target.dataset.id;
+
+  //once I have the ID we have to delete a movie from allMovies array.
+  // and re reder the UI
+  allMovies.splice(id,1)
+  createMovieUI(); 
 }
 
+function handleChecked(event){
+
+  let id = event.target.id;
+  console.log(id)
+
+  allMovies[id].watched = !allMovies[id].watched; 
+}
