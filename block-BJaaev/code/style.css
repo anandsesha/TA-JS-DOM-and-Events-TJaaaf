@@ -1,0 +1,110 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom Styles */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+}
+h1{
+    color: #f3cbcb;
+    font-size: 4rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+.container{
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+input[type="text"]{
+    display: inline-block;
+    width: 100%;
+    padding: 0.4rem 0 0.4rem 0.2rem;
+    font-size: 1.4rem;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+button{
+    background: none;
+    border: none;
+    margin-left: 3rem;
+}
+.filters{
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(59, 59, 59);
+}
+.section{
+    border: 1px solid black;
+    background: linear-gradient(to bottom right
+    , rgba(255, 255, 255, 0.2),rgba(33, 122, 144, 0.4));
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+.strike {
+    text-decoration: line-through;
+}
+hr{
+    padding: 0;    
+}
