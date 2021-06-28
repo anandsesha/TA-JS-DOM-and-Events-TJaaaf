@@ -2,9 +2,68 @@ let input = document.querySelector('input[type="text"]')
 let rootElm = document.querySelector('.todo-list')
 let filtersUl = document.createElement('ul')
 
-let allTodos = JSON.parse(localStorage.getItem('todos')) || []
+let defaultSelected = "all";
+
+let all = document.querySelector('.all')
+let active = document.querySelector('.active')
+let completed = document.querySelector('.completed')
+let clearCompleted = document.querySelector('.clear-completed')
+
+let allTodos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
+
+clearCompleted.addEventListener('click',() =>{
+    allTodos = allTodos.filter((todo) => !todo.isDone)
+    createUI()
+    defaultSelected = "clear-completed"
+    updateActiveButton();
+    localStorage.setItem('todos',JSON.stringify(allTodos))
+})
+
+active.addEventListener('click',() => {
+    let notCompleted = allTodos.filter((todo) => !todo.isDone)
+    createUI(notCompleted) 
+    defaultSelected = "active"
+    updateActiveButton();
+})
+
+completed.addEventListener('click',() => {
+    let completedTodos = allTodos.filter((todo) => todo.isDone)
+    createUI(completedTodos) 
+    defaultSelected = "completed"
+    updateActiveButton();
+})
+
+all.addEventListener('click',() => { 
+    createUI(); // Because all displays everthing. So render full UI
+    defaultSelected = "all"
+    updateActiveButton();
+})
+
+//A function just to highlight the selected button among -> all, active, completed, clear completed
+function updateActiveButton(btn = defaultSelected){
+    all.classList.remove('selected')
+    active.classList.remove('selected')
+    completed.classList.remove('selected')
+    clearCompleted.classList.remove('selected')
+
+    if(btn === "all"){
+        all.classList.add('selected')
+    }
+    if(btn === "active"){
+        active.classList.add('selected')
+    }
+    if(btn === "completed"){
+        completed.classList.add('selected')
+    }
+    if(btn === "clear-completed"){
+        clearCompleted.classList.add('selected')
+    }
+}
+
+updateActiveButton();
 
 input.addEventListener('keyup', handleInput)
+
 
 function handleInput(event){
     console.log(event.keyCode)
@@ -29,11 +88,11 @@ function handleInput(event){
 </li>
 <hr> */}
 
-function createUI(event){
+function createUI(data = allTodos){
     rootElm.innerText = ""
-    filtersUl.innerText = ""
+    // filtersUl.innerText = ""
 
-    allTodos.forEach((todo,index) =>{
+    data.forEach((todo,index) =>{
 
     let li = document.createElement('li')
     let label = document.createElement('label')
@@ -58,23 +117,27 @@ function createUI(event){
     
     })
 
-    let hr = document.createElement('hr')
-    filtersUl.classList.add('filters')
-    let filterLi1 = document.createElement('li')
-    let a1 = document.createElement('a')
-    a1.innerText = 'All'
-    filterLi1.append(a1)
-    let filterLi2 = document.createElement('li')
-    let a2 = document.createElement('a')
-    a2.innerText = 'Active'
-    filterLi2.append(a2)
-    let filterLi3 = document.createElement('li')
-    let a3 = document.createElement('a')
-    a3.innerText = 'Completed'
-    filterLi3.append(a3)
-    filtersUl.append(filterLi1,filterLi2,filterLi3)
-    rootElm.append(hr,filtersUl)
+    // let hr = document.createElement('hr')
+    // filtersUl.classList.add('filters')
+    // let filterLi1 = document.createElement('li')
+    // let a1 = document.createElement('a')
+    // a1.innerText = 'All'
+    // a1.classList.add('selected')
+    // filterLi1.append(a1)
+    // let filterLi2 = document.createElement('li')
+    // let a2 = document.createElement('a')
+    // a2.innerText = 'Active'
+    // filterLi2.append(a2)
+    // let filterLi3 = document.createElement('li')
+    // let a3 = document.createElement('a')
+    // a3.innerText = 'Completed'
+    // filterLi3.append(a3)
+
+    // filtersUl.append(filterLi1,filterLi2,filterLi3)
+    // rootElm.append(hr,filtersUl)
 }
+
+createUI();
 
 function handleDelete(event){
     console.log(event.target.dataset.id)
