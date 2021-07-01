@@ -78,13 +78,17 @@ input[type="text"]{
   font-size: 1rem;
   border: 0;
 }
-.tags button{
+.tags .button{
   text-transform: uppercase;
   color: white;
   padding: 0.4rem 0.6rem;
   background-color: black;
   border-radius: 10px;
   margin: 1.6rem 2.4rem;
+}
+.tags .button-color{
+  color: white;
+  background-color: black;
 }
 .tags button:hover{
   color: black;
@@ -95,8 +99,11 @@ input[type="text"]{
 .flex{
   display: flex;
 }
-.jcc{
+.jce{
   justify-content: space-evenly;
+}
+.jcc{
+  justify-content: center;
 }
 .jcb{
   justify-content: space-between;
@@ -109,7 +116,7 @@ input[type="text"]{
 }
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -142,4 +149,18 @@ input[type="text"]{
   width: 100%;
   border-radius: 10px;
   text-decoration: none;
+}
+img{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+.image-div{
+  text-align: center;
+}
+.tags .active{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-weight: 600;
 }
