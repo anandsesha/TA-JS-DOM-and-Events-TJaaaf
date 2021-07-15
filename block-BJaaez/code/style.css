@@ -98,3 +98,28 @@ button{
 hr{
     padding: 0;
 }
+footer{
+    padding: 1rem;
+    /* border: 1px solid black; */
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+footer button{
+    font-size: 1rem;
+    padding: 0.6rem;
+    background-color: black;
+    color: white;
+}
+footer button:hover{
+    background-color: white;
+    color: black;
+    /* border: 1px solid black; */
+}
+a{
+    text-decoration: none;
+    
+}
+.selected{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
